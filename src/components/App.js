@@ -13,7 +13,7 @@ class App extends Component {
 			<Grid>
 				<Row className="show-grid">
 					<Col xs={12} md={6}>
-						<Editor sendNewCode={}/>
+						<Editor/>
 					</Col>
 					<Col xs={12} md={6}>
 						<Tokens/>
