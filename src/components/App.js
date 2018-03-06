@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import {Grid, Row, Col, Button} from 'react-bootstrap';
 import Editor from './Editor';
-import Tokens from './Tokens';
+import Tokens from './Tokens'; 
 
 class App extends Component {
 	constructor(props){
@@ -25,11 +25,14 @@ class App extends Component {
 
 	getTokenFromCloud() {
 		var myHeaders = new Headers();		
-		var myInit = { method: 'GET',
+		var myInit = { method: 'POST',
 					   headers: myHeaders,
 					   mode: 'cors',
-					   cache: 'default' };
-		fetch("https://us-central1-vbjs-6639a.cloudfunctions.net/lexAnalyser?code=" + this.state.code, myInit)
+					   cache: 'default',
+					   body: JSON.stringify({ code: this.state.code }),
+					   
+					};	
+		fetch("http://localhost:5000/vbjs-6639a/us-central1/lexAnalyser", myInit)
 		.then(function(data){
 			return data.json();
 		})
