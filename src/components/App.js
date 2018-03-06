@@ -47,18 +47,18 @@ class App extends Component {
 		return (
 			<Grid>
 				<Row className="show-grid">
+					<Col xs={12}>
+					<Button bsStyle="primary" onClick={this.getTokenFromCloud}>Análisar Tokens</Button>
+					</Col>					
+				</Row>	
+				<Row className="show-grid">
 					<Col xs={12} md={6}>
 						<Editor code={this.state.code} sendNewCode={this.updateCode}/>
 					</Col>
 					<Col xs={12} md={6}>
 						<Tokens tokens={this.state.tokens}/>
 					</Col>
-				</Row>			
-				<Row className="show-grid">
-					<Col xs={12}>
-					<Button bsStyle="primary" onClick={this.getTokenFromCloud}>Análisar Tokens</Button>
-					</Col>					
-				</Row>		
+				</Row>					
 			</Grid>		
 		);
 	}
