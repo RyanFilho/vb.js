@@ -12,7 +12,7 @@ script: npm run build
 
 deploy:
   provider: pages
-  local-dir: public
+  local-dir: build
   skip-cleanup: true
   github-token: $__GITHUB_TOKEN__  # Set in travis-ci.org dashboard, marked secure
   keep-history: true
