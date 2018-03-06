@@ -22,6 +22,7 @@ class App extends Component {
 				<Row className="show-grid">
 					<Col xs={12}>
 					<Button bsStyle="primary">Análisar Tokens</Button>
+					<Button bsStyle="primary">Interpretar</Button>
 					</Col>					
 				</Row>		
 			</Grid>		
