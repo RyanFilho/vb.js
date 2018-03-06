@@ -5,14 +5,13 @@ value += '    End Sub\n'
 value += 'End Class\n'
 
 var 
-    isOperator = function (c) { return /[+\-*\/\^%=(),]/.test(c); },
-    isDigit = function (c) { return /[0-9]/.test(c); },
-    isQuotes = function (c) { return c === "\""; },
-    //isString = function (c) { return /(\"(\\.|[^"\\])*\")/.test(c); },
-    isWhiteSpace = function (c) { return /\s/.test(c); },
-    isTextFormat = function (c) { return /\n|\t/.test(c); },
-    isReserved = function (c) { return /(?:^|(?<= ))(Class|Sub|End|As|Dim)(?:(?= )|$)/.test(c); },
-    isIdentifier = function (c) { return typeof c === "string" && !isOperator(c) && !isDigit(c) && !isWhiteSpace(c) && !isReserved(c);};
+    isOperator      = c => /[+\-*\/\^%=(),]/.test(c),
+    isDigit         = c => /[0-9]/.test(c),
+    isQuotes        = c => c === "\"",
+    isWhiteSpace    = c => /\s/.test(c),
+    isTextFormat    = c => /\n|\t/.test(c),
+    isReserved      = c => /(?:^|(?<= ))(Class|Sub|End|As|Dim)(?:(?= )|$)/.test(c) ,
+    isIdentifier    = c => typeof c === "string" && !isOperator(c) && !isDigit(c) && !isWhiteSpace(c) && !isReserved(c);
 
 var lex = function(input){
     var tokens = [];
