@@ -3,7 +3,7 @@ value += '    Sub Main(args As String())\n'
 value += '        Console.WriteLine("aaa")\n'
 value += '    End Sub\n'
 value += 'End Class\n'
-
+'Class Program\n    Sub Main(args As String())\n        Console.WriteLine("aaa")\n    End Sub\nEnd Class\n'
 var 
     isOperator      = c => /[+\-*\/\^%=(),]/.test(c),
     isDigit         = c => /[0-9]/.test(c),

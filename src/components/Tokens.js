@@ -3,6 +3,18 @@ import {Table} from 'react-bootstrap';
 
 class Tokens extends Component {  
 	render() {
+        var newRows = [];
+        this.props.tokens.forEach((element,index) => {
+            newRows.push(
+                <tr key={index}>
+                    <td>#</td>
+                    <td>{element.type}</td>
+                    <td>{element.value}</td>
+                    <td>{element.line}</td>
+                    <td>{element.col}</td>
+                </tr>
+            )
+        });
 		return (
             <Table striped bordered condensed hover>
                 <thead>
@@ -15,27 +27,7 @@ class Tokens extends Component {
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td>1</td>
-                        <td>Id</td>
-                        <td>a</td>
-                        <td>1</td>
-                        <td>1</td>
-                    </tr>
-                    <tr>
-                        <td>2</td>
-                        <td>Op</td>
-                        <td>=</td>
-                        <td>1</td>
-                        <td>3</td>
-                    </tr>
-                    <tr>
-                        <td>3</td>
-                        <td>Literal</td>
-                        <td>2</td>
-                        <td>1</td>
-                        <td>5</td>
-                    </tr>
+                   {newRows}
                 </tbody>
             </Table>
 		);
