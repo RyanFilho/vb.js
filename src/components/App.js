@@ -42,8 +42,8 @@ class App extends Component {
 					   body: JSON.stringify({ code: this.state.code }),
 					   
 					};	
-		// fetch("https://us-central1-vbjs-6639a.cloudfunctions.net/lexAnalyser", myInit)
-		fetch("http://localhost:5000/vbjs-6639a/us-central1/lexAnalyser", myInit)		
+		fetch("https://us-central1-vbjs-6639a.cloudfunctions.net/lexAnalyser", myInit)
+		// fetch("http://localhost:5000/vbjs-6639a/us-central1/lexAnalyser", myInit)		
 		.then(this.handleErrors)
 		.then(data =>	data.json())
 		.then(this.updateGrids)
