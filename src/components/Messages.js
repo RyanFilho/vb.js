@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import {Table} from 'react-bootstrap';
 
-class Errors extends Component {  
+class Messages extends Component {  
 	render() {
         var newRows = [];
-        this.props.errors.forEach((element,index) => {
+        this.props.messages.forEach((element,index) => {
             newRows.push(
                 <tr key={index}>
                     <td>{element.id}</td>
@@ -19,9 +19,9 @@ class Errors extends Component {
                 <thead>
                     <tr>
                         <th>#Id</th>
-                        <th>Error</th>
-                        <th>Linha</th>
-                        <th>Coluna</th>
+                        <th>Message</th>
+                        <th>Line</th>
+                        <th>Column</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -32,7 +32,7 @@ class Errors extends Component {
 	}
 }
 
-export default Errors;
+export default Messages;
 
 
 
